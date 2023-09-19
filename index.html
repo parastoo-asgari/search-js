@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Caprasimo&family=Chewy&family=Dancing+Script:wght@400;600;700&family=Domine&family=Kalam&family=Lato:wght@100;400&family=Lora:ital,wght@0,400;1,500&family=Lugrasimo&family=Merriweather&family=Noto+Sans&family=Oswald:wght@300&family=PT+Serif&family=Pacifico&family=Poppins:ital@0;1&family=REM:wght@300&family=Roboto:ital,wght@0,500;1,400&family=Signika+Negative:wght@300&family=Sriracha&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    body {
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(18, 10, 59);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        width: 100%;
+        font-size: 60px;
+        color: wheat;
+        position: fixed;
+        letter-spacing: 3px;
+        top: 30px;
+        text-align: center;
+        font-family: 'Caprasimo', cursive;
+        transition: 0.6s;
+        margin-right: 30px;
+        font-family: 'Sriracha', cursive;
+    }
+
+    .box-search {
+        width: 50%;
+        /* border: 2px solid white; */
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(245, 146, 196);
+        flex-wrap: wrap;
+
+    }
+
+    .box-search input {
+        width: 90%;
+        height: 40px;
+        border-radius: 20px;
+        background-color: rgb(90, 88, 88);
+        border: none;
+        outline: none;
+        margin-top: 15px;
+        padding-left: 30px;
+        color: white;
+        font-size: 20px;
+
+    }
+
+    .box-search ul {
+        width: 100%;
+        margin-right: 60px;
+
+    }
+
+    .box-search li {
+        width: 100%;
+        height: 30px;
+        border: 1px solid gray;
+        list-style-type: none;
+        padding-left: 20px;
+        color: rgba(255, 255, 255, 0.918);
+        font-size: 20px;
+        display: none;
+        font-family: 'Sriracha', cursive;
+    }
+</style>
+
+<body>
+    <h1>parastoo asgari</h1>
+
+    <div class="box-search">
+        <input type="text" id="inp" placeholder="search...">
+        <ul>
+            <li>maryam</li>
+            <li>sara</li>
+            <li>ali</li>
+            <li>parastoo</li>
+            <li>arsam</li>
+            <li>tara</li>
+            <li>alireza</li>
+            <li>aida</li>
+            <li>samin</li>
+            <li>behrad</li>
+            <li>sam</li>
+            <li>aram</li>
+            <li>elsa</li>
+            <li>rad</li>
+            <li>kimia</li>
+            <li>reyhaneh</li>
+            <li>hasti</li>
+            <li>sahar</li>
+            <li>shiva</li>
+            <li>ramin</li>
+        </ul>
+    </div>
+</body>
+<script>
+    let _inp = document.querySelector('.box-search > input')
+    let _li = document.querySelectorAll('li')
+    document.getElementById('inp').addEventListener('input', (e) => {
+        let val = e.target.value
+        if (val == 'null' || val == "") {
+            _li.forEach((item) => {
+                item.style.display = 'none'
+            })
+
+        } else {
+            _li.forEach((item) => {
+                let txt = item.innerText
+                if (
+                    txt.substring(0, val.length) == val
+                ) {
+                    item.style.display = 'flex'
+                } else {
+                    item.style.display = 'none'
+                }
+            })
+        }
+    })
+</script>
+
+</html>
